@@ -15,9 +15,9 @@
       position:relative;
     }
     body::before {
-      content:'';
-      position:fixed;inset:0;
-      background-image:repeating-linear-gradient(45deg,rgba(120,53,15,0.05)0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(120,53,15,0.05)0 1px,transparent 1px 5px);
+      content:'';position:fixed;inset:0;
+      background-image:repeating-linear-gradient(45deg,rgba(120,53,15,0.05)0 2px,transparent 2px 6px),
+                       repeating-linear-gradient(-45deg,rgba(120,53,15,0.05)0 1px,transparent 1px 5px);
       opacity:.7;z-index:-1;
     }
     header {
@@ -31,25 +31,75 @@
     header::before {content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,0.1)0 3px,transparent 3px 6px);mix-blend-mode:multiply;pointer-events:none;}
     header h1 {font-size:3rem;text-shadow:3px 3px 0 #000;letter-spacing:2px;}
     header p {margin-top:1rem;font-size:1.3rem;background:rgba(0,0,0,0.4);display:inline-block;padding:0.5rem 1rem;border-radius:6px;}
-    .accordion {max-width:1000px;margin:2rem auto;padding:1rem;background:#fffaf0;border:6px double #78350f;border-radius:14px;box-shadow:0 0 20px rgba(0,0,0,0.25);position:relative;}
-    .accordion::before {content:'';position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(120,53,15,0.08)0 2px,transparent 2px 6px);border-radius:14px;pointer-events:none;}
-    .accordion button {width:100%;background:linear-gradient(135deg,#b45309,#78350f);color:#fff;padding:1rem;text-align:left;border:none;font-size:1.4rem;cursor:pointer;border-bottom:3px dashed #78350f;border-radius:10px;transition:all .3s ease;box-shadow:0 4px 6px rgba(0,0,0,0.2);position:relative;overflow:hidden;}
-    .accordion button::before {content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.08)0 3px,transparent 3px 7px);mix-blend-mode:overlay;}
+    .accordion {
+      max-width:1000px;margin:2rem auto;padding:1rem;background:#fffaf0;
+      border:6px double #78350f;border-radius:14px;
+      box-shadow:0 0 20px rgba(0,0,0,0.25);position:relative;
+    }
+    .accordion::before {
+      content:'';position:absolute;inset:0;
+      background:repeating-linear-gradient(135deg,rgba(120,53,15,0.08)0 2px,transparent 2px 6px);
+      border-radius:14px;pointer-events:none;
+    }
+    .accordion button {
+      width:100%;background:linear-gradient(135deg,#b45309,#78350f);color:#fff;
+      padding:1rem;text-align:left;border:none;font-size:1.4rem;cursor:pointer;
+      border-bottom:3px dashed #78350f;border-radius:10px;
+      transition:all .3s ease;box-shadow:0 4px 6px rgba(0,0,0,0.2);position:relative;overflow:hidden;
+    }
+    .accordion button::before {
+      content:'';position:absolute;inset:0;
+      background:repeating-linear-gradient(45deg,rgba(255,255,255,0.08)0 3px,transparent 3px 7px);
+      mix-blend-mode:overlay;
+    }
     .accordion button:hover {background:#d97706;transform:scale(1.02);}
-    .accordion-content {max-height:0;overflow:hidden;transition:max-height .5s ease;padding:0 1rem;background:#fffaf0;border-left:6px solid #78350f;border-radius:10px;margin-top:0.5rem;position:relative;}
-    .accordion-content::before {content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(120,53,15,0.07)0 1px,transparent 1px 5px);border-radius:10px;pointer-events:none;}
+    .accordion-content {
+      max-height:0;overflow:hidden;transition:max-height .5s ease;
+      padding:0 1rem;background:#fffaf0;border-left:6px solid #78350f;
+      border-radius:10px;margin-top:0.5rem;position:relative;
+    }
+    .accordion-content::before {
+      content:'';position:absolute;inset:0;
+      background:repeating-linear-gradient(45deg,rgba(120,53,15,0.07)0 1px,transparent 1px 5px);
+      border-radius:10px;pointer-events:none;
+    }
     .accordion-content p {
       margin:1rem 0;
       line-height:1.6;
-      font-family: 'Roboto', sans-serif;
-      color: #1f1f1f;
-      font-size: 1.05rem;
+      font-family:'Roboto', sans-serif;
+      color:#1f1f1f;
+      font-size:1.05rem;
     }
-    .accordion-content img {width:100%;border:3px solid #b45309;border-radius:10px;margin-top:1rem;box-shadow:0 0 10px rgba(0,0,0,0.3);}
-    footer {text-align:center;padding:1.5rem;background:#3b2f2f;color:white;font-family:'Fredericka the Great',cursive;border-top:10px solid #b45309;border-image:repeating-linear-gradient(45deg,#b45309,#78350f 10px,#d97706 20px)30;position:relative;}
-    footer::before {content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,0.07)0 2px,transparent 2px 5px);mix-blend-mode:overlay;pointer-events:none;}
-    #muteButton {position:fixed;bottom:20px;right:20px;background:#78350f;color:#fff;border:none;border-radius:50%;width:50px;height:50px;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 8px rgba(0,0,0,0.4);transition:transform .3s ease;}
-    #muteButton:hover {transform:scale(1.1);background:#b45309;}
+    figure {
+      margin:1rem 0;text-align:center;
+    }
+    figure img {
+      width:100%;
+      border:3px solid #b45309;
+      border-radius:10px;
+      box-shadow:0 0 10px rgba(0,0,0,0.3);
+    }
+    figure figcaption {
+      font-family:'Roboto', sans-serif;
+      font-size:0.9rem;
+      color:#4b2e05;
+      margin-top:0.5rem;
+      background:rgba(244,227,186,0.5);
+      padding:0.4rem;
+      border-radius:6px;
+    }
+    footer {
+      text-align:center;padding:1.5rem;background:#3b2f2f;color:white;
+      font-family:'Fredericka the Great',cursive;
+      border-top:10px solid #b45309;
+      border-image:repeating-linear-gradient(45deg,#b45309,#78350f 10px,#d97706 20px)30;
+      position:relative;
+    }
+    footer::before {
+      content:'';position:absolute;inset:0;
+      background:repeating-linear-gradient(0deg,rgba(255,255,255,0.07)0 2px,transparent 2px 5px);
+      mix-blend-mode:overlay;pointer-events:none;
+    }
   </style>
 </head>
 <body>
@@ -62,35 +112,50 @@
     <div class="accordion-content">
       <p>André Neves nasceu no Recife, mas mora atualmente em Porto Alegre. Desde a infância esteve em contato com livros, que sua mãe, professora da APAE, deixava pela casa para que os filhos os encontrassem naturalmente. Também por influência da mãe, teve contato com as artes, desenhando e produzindo artesanato com os irmãos, atividades que vendia ainda menino.
 Com a avó, que sempre lia para ele, aprendeu a perceber o ritmo das palavras. Em 1995 começou a ilustrar livros, desenvolvendo aos poucos a arte de contar histórias por meio das imagens. A ilustração se tornou para André uma forma mágica de expressão, já que sua sensibilidade e seus pensamentos se manifestam mais pelo olhar, permitindo que os outros compreendam o mundo e as relações do cotidiano através das imagens.</p>
-      <img src="recife.jpg" alt="'Encanta Moça Bridge, Recife, Pernambuco', de Wilfredo Rafael Rodriguez Hernandez, via Wikimedia Commons: Creative Commons Zero, Public Domain Dedication">
+      <figure>
+        <img src="recife.jpg" alt="'Encanta Moça Bridge, Recife, Pernambuco', de Wilfredo Rafael Rodriguez Hernandez, via Wikimedia Commons: Creative Commons Zero, Public Domain Dedication">
+        <figcaption>'Encanta Moça Bridge, Recife, Pernambuco', de Wilfredo Rafael Rodriguez Hernandez, via Wikimedia Commons: Creative Commons Zero, Public Domain Dedication</figcaption>
+      </figure>
     </div>
+
     <button>Estilo e Temas</button>
     <div class="accordion-content">
       <p>O estilo de André Neves combina ilustração e narrativa poética. Cores terrosas, traços de xilogravura, cactos e elementos da cultura sertaneja permeiam suas criações. Ele aborda a memória, a infância e o sonho como instrumentos de resistência cultural. Suas obras frequentemente dialogam com a tradição oral, a religiosidade popular e o imaginário infantil, refletindo uma conexão profunda com o Nordeste.</p>
-      <img src="capalivro.jpg" alt="Capa do livro de André Neves - Maria Peçonha, publicado pela editora DCL">
+      <figure>
+        <img src="capalivro.jpg" alt="Capa do livro de André Neves - Maria Peçonha, publicado pela editora DCL">
+        <figcaption>Capa do livro de André Neves - Maria Peçonha, publicado pela editora DCL</figcaption>
+      </figure>
     </div>
+
     <button>Valores e Política Cultural</button>
     <div class="accordion-content">
       <p>Embora não seja um ativista político, André Neves expressa uma política cultural profunda: a defesa da infância, da imaginação e da leitura como direitos humanos. Sua obra aborda a história, ancestralidade e pautas do povo nordestino e valoriza a educação, diversidade e o acesso à cultura. Ele participa de projetos de incentivo à leitura e à arte em escolas públicas, contribuindo para a preservação da identidade cultural regional. Além de retratar pautas em decorrência do abandono e preconceito com a Região Nordeste do Brasil, tanto de forma material, como na estrutura cultural em si.</p>
-      <img src="foto3.jpg" alt=" 'Recife, the Brazilian capital of social inequality', de Wilfredo Rafael Rodriguez Hernandez, via Wikimedia Commons: Creative Commons Zero">
+      <figure>
+        <img src="foto3.jpg" alt="'Recife, the Brazilian capital of social inequality', de Wilfredo Rafael Rodriguez Hernandez, via Wikimedia Commons: Creative Commons Zero">
+        <figcaption>'Recife, the Brazilian capital of social inequality', de Wilfredo Rafael Rodriguez Hernandez, via Wikimedia Commons: Creative Commons Zero</figcaption>
+      </figure>
     </div>
+
     <button>Obras</button>
     <div class="accordion-content">
       <p>É a partir de suas obras que o autor articula as pautas citadas no bloco Valores e Política Cultural, gerando interpretação moldavel de acordo com o objetivo de leitura, ou seja, que pode mudar de acordo com a visão de quem lê, um exemplo caro disso são obras infantis, que podem ter diversas vertentes em temas complexos. André Neves publicou diversas obras que unem literatura e ilustração, marcadas por poesia, sensibilidade e referências à cultura nordestina. Entre seus livros mais conhecidos estão <strong>“Obax”</strong>, <strong>“Lino”</strong>, <strong>“A Caligrafia de Dona Sofia”</strong>, <strong>“Tom”</strong> e <strong>“O Colecionador de Chuvas”</strong>. Suas histórias abordam temas como a imaginação, o afeto, o autoconhecimento e o valor da diversidade, sempre com ilustrações expressivas e cheias de cores. Através de seus livros, André convida o leitor a refletir sobre o olhar poético diante do mundo e a importância de preservar a infância e a sensibilidade nas relações humanas.</p>
     </div>
+
     <button>Premiações</button>
     <div class="accordion-content">
       <p>Ao longo de sua carreira, André Neves recebeu diversos reconhecimentos por sua contribuição à literatura e à ilustração brasileira. Entre os prêmios mais importantes estão o <strong>Prêmio Luís Jardim</strong> de 2001, na categoria de melhor livro de imagem, a <strong>menção honrosa no Prêmio Jabuti</strong> em 2003 e o <strong>Prêmio Açorianos</strong> de 2004, na categoria de melhor ilustração. Além disso, várias de suas obras receberam o selo <strong>“Altamente Recomendável”</strong> da Fundação Nacional do Livro Infantil e Juvenil, consolidando seu destaque no universo da literatura infantil e infantojuvenil.</p>
     </div>
+
     <button>SELIBI 2025</button>
     <div class="accordion-content">
       <p>Em 2025, André Neves será o homenageado da SELIBI (Semana do Livro e da Biblioteca) do SESI-SP, evento que ocorrerá de 27 a 30 de outubro. A escolha do autor pernambucano resultou de uma votação democrática que envolveu mais de 25 mil votos de estudantes, professores e bibliotecários da rede SESI no estado de São Paulo, evidenciando a profunda conexão do autor com o público leitor das escolas SESI. Durante a SELIBI 2025, a obra e a biografia de André Neves serão trabalhadas pelos alunos e usuários das bibliotecas do SESI-SP em diversas categorias, como contos, ilustração, fotografia e podcasts. A seleção do homenageado evidenciará o expressivo envolvimento da comunidade escolar e o reconhecimento da importância de sua contribuição à literatura infantojuvenil brasileira. André Neves é conhecido por sua narrativa sensível e traços marcantes, características que encantam leitores de todas as idades. Sua homenagem na SELIBI 2025 reforçará a relevância de sua obra e sua influência na formação de leitores críticos e criativos.</p>
+    </div>
   </section>
-  <audio id="somAmbiente" autoplay loop>
-    <source src="sons/ambiente_sertão.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio.
-  </audio>
-  <button id="muteButton">🔇</button>
+
+  <footer>
+    <p>© 2025 - Página dedicada à obra de André Neves</p>
+  </footer>
+
   <script>
     const buttons=document.querySelectorAll('.accordion button');
     buttons.forEach(btn=>{
@@ -98,15 +163,6 @@ Com a avó, que sempre lia para ele, aprendeu a perceber o ritmo das palavras. E
         const content=btn.nextElementSibling;
         content.style.maxHeight=content.style.maxHeight?null:content.scrollHeight+"px";
       });
-    });
-    const som=document.getElementById('somAmbiente');
-    som.volume=0.9; 
-    const muteBtn=document.getElementById('muteButton');
-    let muted=false;
-    muteBtn.addEventListener('click',()=>{
-      muted=!muted;
-      som.muted=muted;
-      muteBtn.textContent=muted?'🔈 Música livre de direitos autorais, feita por Cléber Filho':'🔇 Música livre de direitos autorais, feita por Cléber Filho';
     });
   </script>
 </body>
